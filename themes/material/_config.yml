@@ -135,14 +135,24 @@ hanabi:
     enable: false
     line_number: true
     includeDefaultColors: true
-    customColors: 
+    customColors:
 
 # Post License
 # You can specify the text you want to show in the end of your posts and pages, HTML tag is supported.
 #   For example, you can setup a CC license as:
 #       'This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>'
 # You can also use Front-Matter `license` to override this setting.
-license: 
+license:
+
+# Gallery Panel
+# You must activate Formspree before using
+gallery:
+    panel_show: false
+    left_show: true
+    left_title: Introduction
+    left_info: This is a Example.
+    right_show: true
+    right_title: Get in touch
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -157,25 +167,25 @@ toc:
 
 # SNS Menu
 sns:
-    email: youremail@email.com
-    facebook: "https://www.facebook.com/facebook"
-    twitter: "https://twitter.com/twitter"
-    googleplus: "https://www.google.com/"
+    email: marsbaiyp@gmail.com
+    facebook:
+    twitter:
+    googleplus:
     weibo:
     instagram:
     tumblr:
     github:
     linkedin:
-    zhihu:
+    zhihu: https://www.zhihu.com/people/bai-yun-peng-77
     bilibili:
     telegram:
     v2ex:
 
 # SNS Share Switch
 sns_share:
-    twitter: true
-    facebook: true
-    googleplus: true
+    twitter: false
+    facebook: false
+    googleplus: false
     weibo: true
     linkedin: false
     qq: false
@@ -185,7 +195,7 @@ sns_share:
 sidebar:
     dropdown:
         Email Me:
-            link: "#"
+            link: "mailto: marsbaiyun@gmail.com"
             icon: email
     homepage:
         use: true
@@ -196,7 +206,7 @@ sidebar:
         icon: inbox
         divider: false
     categories:
-        use: false
+        use: true
         icon: chrome_reader_mode
         divider: false
     pages:
@@ -205,7 +215,7 @@ sidebar:
             #icon: person
             #divider: false
     article_num:
-        use: false
+        use: true
         divider: false
     footer:
         divider: true
@@ -221,35 +231,58 @@ sidebar:
 
 # Comment Systems
 # Available value of "use":
-#     disqus | disqus_click | changyan | livere | gitment | valine
-# If you want to use gitment,you should get the client_id and client_secret form https://github.com/settings/applications/new
-# If you want to use valine,you should get the app_id and app_key form https://leancloud.cn ,more setting please see https://github.com/xCss/Valine
+#     disqus | disqus_click | changyan | livere | gitment | gitalk | valine | wildfire
+# If you want to use gitment or gitalk,you should get the client_id and client_secret from https://github.com/settings/applications/new
+# If you want to use valine,you should get the app_id and app_key from https://leancloud.cn ,more setting please see https://valine.js.org
 comment:
-    use:
-    shortname: # duoshuo or disqus shortname
+    use: disqus_click
+    shortname: marsonly
     changyan_appid:
     changyan_conf:
     changyan_thread_key_type: path
     livere_data_uid:
     gitment_repo:   # git repo of the hexo
     gitment_owner:  # git repo's owner
-    gitment_client_id:  # github app client id 
-    gitment_client_secret :  # github app client secret 
-    valine_leancloud_appId: # leancloud application app id
-    valine_leancloud_appKey: # leancloud application app key
+    gitment_client_id:  # github app client id
+    gitment_client_secret :  # github app client secret
+    valine_leancloud_appId:  # leancloud application app id
+    valine_leancloud_appKey:  # leancloud application app key
+    valine_notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+    valine_verify: false # valine verify code (true/false)
+    valine_pageSize: 10 # comment list page size
+    valine_avatar: identicon # gravatar style https://valine.js.org/#/avatar
+    valine_lang: zh-cn # i18n
+    valine_placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+    valine_guest_info: nick,mail,link #valine comment header info
+    gitalk_repo: # git repo of the hexo
+    gitalk_owner: # git repo's owner
+    gitalk_client_id: # github app client id
+    gitalk_client_secret: # github app client secret
+    wildfire_database_provider: firebase # firebase or wilddog
+    wildfire_wilddog_site_id:
+    wildfire_firebase_api_key:
+    wildfire_firebase_auth_domain:
+    wildfire_firebase_database_url:
+    wildfire_firebase_project_id:
+    wildfire_firebase_storage_bucket:
+    wildfire_firebase_messaging_sender_id:
+    wildfire_theme: light # light or dark
+    wildfire_locale: en # en or zh-CN
 
 # Search Systems
 # Available value:
 #     swiftype | google | local
 search:
-    use: google
+    use: local
     swiftype_key:
+    path: search.xml
+    field: all
 
 # Analytics Systems
 # Available value:
 #     baidu | google | cnzz
 analytics:
-    google_site_id:
+    google_site_id: UA-123478508-1
     baidu_site_id:
     cnzz_site_id:
 
@@ -283,14 +316,14 @@ vendors:
 #   For example
 #       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js
     # jQuery 2.2.0
-    jquery:
+    jquery: https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js
     # nprogress 0.2.0
-    nprogress:
+    nprogress: https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
     # FontAwesome 4.5.0
-    fontawesome:
+    fontawesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css
     # MathJax 2.7.0-2.7.1
-    mathjax:
+    mathjax: https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js
     # Prettify r298 (only prettify.js)
-    prettify:
+    prettify: https://cdn.bootcss.com/prettify/r298/prettify.min.js
     # Material Icons 3.0.1
-    material_icons:
+    material_icons: https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css
