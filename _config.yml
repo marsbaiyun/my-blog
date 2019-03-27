@@ -80,5 +80,5 @@ theme: material
 deploy:
   type: git
   repo:
-    coding: https://git.coding.net/marsonly/marsonly.git,master
-    github: https://github.com/marsbaiyun/my-blog.git,hx-deploy
+    #coding: https://git.coding.net/marsonly/marsonly.git,master
+    github: https://github.com/marsbaiyun/marsbaiyun.github.io.git,master
